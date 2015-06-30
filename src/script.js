@@ -5,7 +5,8 @@ require.config({
     'bootstrap': '../lib/bootstrap.min',
     'leaflet': '../lib/leaflet/leaflet',
     'L.Control.Locate': '../lib/leaflet/L.Control.Locate',
-    'leaflet.markercluster': '../lib/leaflet.markercluster/leaflet.markercluster',
+    'leaflet.markercluster': '../lib/leaflet.markercluster/leaflet.markercluster-src',
+    'L.Hash': '../lib/leaflet/leaflet-hash',
     'handlebars': '../lib/handlebars',
     'lodash': '../lib/lodash.min',
     'flight': '../lib/flight.min',
@@ -27,7 +28,8 @@ require.config({
       exports: 'L'
     },
     'L.Control.Locate': ['leaflet'],
-    'leaflet.markercluster': ['leaflet']
+    'leaflet.markercluster': ['leaflet'],
+    'L.Hash': ['leaflet']
   }
 });
 

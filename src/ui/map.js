@@ -7,6 +7,7 @@ define(function(require, exports, module) {
 
   require('L.Control.Locate');
   require('leaflet.markercluster');
+  require('L.Hash');
 
   module.exports = flight.component(function map() {
     this.attributes({
@@ -69,6 +70,13 @@ define(function(require, exports, module) {
       this.featurePreviewAttr = config.map.preview_attribute;
 
       // setup the center after we're done moving around
+      this.setView(mapConfig);
+    };
+
+    this.setView = function(mapConfig) {
+      // if url hash exists
+      // this.leafletHash = new L.Hash(map);
+      // else, use default view
       this.map.setView(mapConfig.center, mapConfig.zoom);
     };
 

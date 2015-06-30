@@ -44,6 +44,15 @@ define(
           mock.config.map.maxBounds);
       });
 
+      it('uses default map view when url hash is not present', function() {
+        // this.component.map = jasmine.createSpyObj('Map', ['setView']);
+        // expect(this.component.map.setView).toHaveBeenCalledWith(
+        //   mock.config.map.center, mock.config.map.zoom);
+      })
+
+      it('uses map view from url hash when present', function() {
+      })
+
       it('data sets up the features', function() {
         this.component.trigger('data', mock.data);
         waits(25);
