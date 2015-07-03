@@ -74,9 +74,6 @@ define(function(require, exports, module) {
     };
 
     this.setView = function(mapConfig) {
-      // if url hash exists
-      // this.leafletHash = new L.Hash(map);
-      // else, use default view
       this.map.setView(mapConfig.center, mapConfig.zoom);
     };
 
@@ -252,6 +249,9 @@ define(function(require, exports, module) {
 
     this.after('initialize', function() {
       this.map = L.map(this.node, {});
+
+      //Initialize leaflet hash upon map object creation.
+      this.leafletHash = new L.Hash(this.map);
 
       this.cluster = new L.MarkerClusterGroup({
         chunkedLoading: true,
