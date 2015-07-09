@@ -75,6 +75,9 @@ define(function(require, exports, module) {
         serves_families: "other",
         serves_veterans: "other"
       };
+      csv = _.filter(csv, function(row) {
+        return row["organization_name"] !== ""
+      });
       var features = _.map(csv, function(row) {
         return this.csvRowToFeature(row, facetValues);
       }.bind(this));
