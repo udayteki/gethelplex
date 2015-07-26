@@ -16,13 +16,13 @@ define(function(require, exports, module) {
         }.bind(this));
       } else if (0) {
         d3.csv("kentucky substance abuse referral list.csv", function(data) {
-          data.splice(0, 2)
+          data.splice(0, 2);
           this.trigger('data', this.processData(this.csvToGeojson(data)));
         }.bind(this));
       } else {
         Tabletop.init( { key: '1oWIrEg77ZSOiYGUA6H4b1wlvtC8pIrvdznQDcbLEUPg',
           callback: function(data) {
-            data.splice(0, 2)
+            data.splice(0, 2);
             this.trigger('data', this.processData(this.csvToGeojson(data)));
           }.bind(this),
           simpleSheet: true } );
@@ -82,7 +82,7 @@ define(function(require, exports, module) {
         insurance_self_pay: "insurance"
       };
       csv = _.filter(csv, function(row) {
-        return row["organization_name"] !== ""
+        return row.organization_name !== "";
       });
       var features = _.map(csv, function(row) {
         return this.csvRowToFeature(row, facetValues);
