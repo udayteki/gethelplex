@@ -1,33 +1,20 @@
 define(function(require, exports, module) {
   'use strict';
   var flight = require('flight');
-  var $ = require('jquery');
-  var d3 = require('d3');
   var Tabletop = require('Tabletop');
-  // consider removing lodash for jquery comprehensions?
   var _ = require('lodash');
 
   module.exports = flight.component(function loader() {
-    this.onConfig = function onConfig(ev, config) {
+    this.onConfig = function onConfig() {
       // load the geojson
-      if (0) {
-        $.getJSON(config.geojson_source, function(data) {
-          this.trigger('data', this.processData(data));
-        }.bind(this));
-      } else if (0) {
-        d3.csv("kentucky substance abuse referral list.csv", function(data) {
+      Tabletop.init( {
+        key: '1oWIrEg77ZSOiYGUA6H4b1wlvtC8pIrvdznQDcbLEUPg',
+        callback: function(data) {
           data.splice(0, 2);
           this.trigger('data', this.processData(this.csvToGeojson(data)));
-        }.bind(this));
-      } else {
-        Tabletop.init( { key: '1oWIrEg77ZSOiYGUA6H4b1wlvtC8pIrvdznQDcbLEUPg',
-          callback: function(data) {
-            data.splice(0, 2);
-            this.trigger('data', this.processData(this.csvToGeojson(data)));
-          }.bind(this),
-          simpleSheet: true } );
-      }
-
+        }.bind(this),
+        simpleSheet: true
+      });
     };
 
     this.csvRowToProperties = function csvRowToProperties(csvRow, facetValues) {
