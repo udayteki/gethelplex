@@ -46,8 +46,8 @@ define(function(require, exports) {
 
     phone_numbers: function(value) {
       if(value.length > 12) {
-        var regex = new RegExp("\\+?\\(?\\d*\\)? ?\\(?\\d+\\)?\\d*([\\s./-]?\\"+
-                              "d{2,}), g");
+        var regex = new RegExp("\\+?\\(?\\d*\\)? ?\\(?\\d+\\)?\\d*([\\s./-]?\\d{2,})+",
+            "g");
         var firstValue = regex.exec(value);
         var secondValue = regex.exec(value);
         value = firstValue[0];
