@@ -10,7 +10,11 @@ define(function(require, exports) {
     list: Handlebars.compile('<ul> {{#list}} <li>{{{this}}}</li> {{/list}} </ul>'),
     directions: Handlebars.compile('<a target="_blank" href="http://maps.google.com/maps?q={{directions}}">{{title}}</a>'),
     simple: Handlebars.compile('{{text}}'),
-    phone_numbers: Handlebars.compile('<a href="tel:{{text}}">{{text}}</a>'),
+    phone_numbers: Handlebars.compile(
+      '{{#if secondValue}}<a href="tel:{{text}}">{{text}}</a><br>' +
+        '<a href="tel:{{secondValue}}">{{secondValue}}</a>' +
+      '{{else}}<a href="tel:{{text}}">{{text}}</a>{{/if}}'
+    ),
     popup: Handlebars.compile('<div>{{#popup}}<div class="feature-{{klass}}">{{{rendered}}}</div>{{/popup}}</div>')
   };
   var formatters = {
@@ -41,6 +45,17 @@ define(function(require, exports) {
     },
 
     phone_numbers: function(value) {
+      if(value.length > 12) {
+        var regex = new RegExp("\\+?\\(?\\d*\\)? ?\\(?\\d+\\)?\\d*([\\s./-]?\\"+
+                              "d{2,}), g");
+        var firstValue = regex.exec(value);
+        var secondValue = regex.exec(value);
+        value = firstValue[0];
+        if(secondValue[0].length >= 12) {
+          return templates.phone_numbers({text: value,
+                                          secondValue: secondValue[0]});
+        }
+      }
       return templates.phone_numbers({text: value});
     },
 
