@@ -138,6 +138,9 @@ define(function(require, exports, module) {
       if (this.showAllFacets) {
         $('#facets').addClass('control-sidebar');
         $('#facets').removeClass('control-survey');
+        if (window.screen.availWidth <= 600) {
+          $('#facets').remove();
+        }
         $(document).trigger('uiShowResults', {});
       } else {
         $('#facets').removeClass('control-sidebar');

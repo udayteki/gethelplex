@@ -294,6 +294,7 @@ body > div.container {
   margin-bottom: 5px
 }
 
+/* #facets is removed in src/ui/facet.js at this breakpoint */
 @media (max-width: 600px) {
   .control-survey,
   .control-sidebar {
