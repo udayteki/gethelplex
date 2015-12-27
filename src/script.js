@@ -25,6 +25,9 @@ require.config({
     'flight': {
       exports: 'flight'
     },
+    'Tabletop': {
+      exports: 'Tabletop'
+    },
     'bootstrap': ['jquery'],
     leaflet: {
       exports: 'L'
