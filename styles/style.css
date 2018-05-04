@@ -444,7 +444,7 @@ body > div.container {
   }
 
   body.modal-open .modal .modal-header::before, .list-filters::before {
-    content: "Get Help Lex - gethelplex.org \A";
+    content: "GetHelpLex - gethelplex.org \A";
     white-space: pre;
     font-weight: 900;
   }

@@ -1,4 +1,4 @@
-# Get Help Lex [![Build Status](https://travis-ci.org/openlexington/gethelplex.svg)](https://travis-ci.org/openlexington/gethelplex) [![Stories in Ready](https://badge.waffle.io/openlexington/gethelplex.svg?label=ready&title=Ready)](http://waffle.io/openlexington/gethelplex)
+# GetHelpLex [![Build Status](https://travis-ci.org/openlexington/gethelplex.svg)](https://travis-ci.org/openlexington/gethelplex) [![Stories in Ready](https://badge.waffle.io/openlexington/gethelplex.svg?label=ready&title=Ready)](http://waffle.io/openlexington/gethelplex)
 
 ## I want to help develop Finda
 
