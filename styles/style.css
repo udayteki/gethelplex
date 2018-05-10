@@ -4,6 +4,10 @@
 @import url("../lib/leaflet.markercluster/MarkerCluster.css");
 @import url("../lib/leaflet.markercluster/MarkerCluster.Default.css");
 
+a {
+  color: #2277bf; /* #428bca */
+}
+
 html {
   height: 100%;
 }
