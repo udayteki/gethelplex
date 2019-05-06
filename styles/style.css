@@ -20,7 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  color: #222;
+  color: #111;
 }
 
 body > div.container {
