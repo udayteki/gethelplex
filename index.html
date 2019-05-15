@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/properties.css">
+    <link rel="stylesheet" type="text/css" href="styles/navbar_header.css">
   </head>
 
   <body>
@@ -25,11 +26,7 @@
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
          <!--Brand and Toggle get grouped for better mobile display-->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#finda-navbar-collapse" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            Menu
-          </button>
+        <div class="navbar-header" style="width:100%">
           <a href=""><img class="brand_image" src="img/GetHelpLextype.png" height="50px" alt="GetHelpLex"></a>
           <a class="navbar-brand" href="">
             <!-- GetHelpLex -->
@@ -37,18 +34,23 @@
             <!-- this is a hack. we'll fix css later. -->
           </a> <!-- This is the name of the map -->
           <img src="img/spinner.gif" id="message" style="display:none;" width="20px">
-        </div>
-        <!--Collected the nav links and content for toggling-->
-        <div class="collapse navbar-collapse" id="finda-navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="" >Home</a>
+            <li class="home-nav-entry">
+              <a href="/" >
+                <img src="img/home-solid.svg" class="header-nav-icon home-nav-icon" style="" alt="">
+                Home
+              </a>
             </li>
             <li>
-              <a href="#" data-toggle="modal" data-target="#about">More Information</a>
+              <img src="img/info-circle-solid.svg" class="header-nav-icon info-nav-icon" style="" alt="">
+              <a href="#" data-toggle="modal" data-target="#about">Info</a>
+            </li>
+            <li>
+              <img src="img/bullhorn-solid.svg" class="header-nav-icon feedback-nav-icon" style="" alt="">
+              <a href="#" data-toggle="modal" data-target="#feedback-modal">Feedback</a>
             </li>
           </ul>
-        </div><!-- /.navbar-collapse -->
+        </div>
       </div><!-- /.container-fluid -->
     </nav>
 
@@ -305,7 +307,7 @@
       </div>
     </div>
 
-    <a href="#" id="gaf-button" data-toggle="modal" data-target="#feedback-modal">Feedback</a>
+    
     <!--[if lt IE 9]>
     <script src="lib/es5-shim.min.js"></script>
     <script src="lib/es5-sham.min.js"></script>
