@@ -424,7 +424,8 @@ body > div.container {
   margin-left: auto;
 }
 
-@media only screen and (max-width : 768px) {
+/* was 768 - but made it smaller to allow some display on smaller screens */
+@media only screen and (max-width : 498px) {
   body > div.container {
     flex-direction: column;
   } 
